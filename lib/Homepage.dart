@@ -28,14 +28,22 @@ class Homepage extends StatelessWidget {
               ))
         ],
       ),
-      body: ChangeNotifierProvider(
-        create: (context) => Counter(),
-        child: Container(
-          child: Column(
-            children: [
-              Mytext(),
-              Mybutton(),
-            ],
+      body: Expanded(
+        child: Center(
+          child: Container(
+            child: Column(
+              children: [
+                Mytext(),
+                SizedBox(
+                  height: 50,
+                ),
+                Mybutton(
+                    label: "Increment",
+                    onPressed: () {
+                      Provider.of<Counter>(context, listen: false).increment();
+                    })
+              ],
+            ),
           ),
         ),
       ),

@@ -7,16 +7,14 @@ class Mytext extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Counter c = Provider.of<Counter>(context);
+    final counter = Provider.of<Counter>(context);
 
-    return Expanded(
-        child: Center(
-      child: Text(
-        "${c.counter}",
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 50,
-        ),
+    return Container(
+        child: Text(
+      "${counter.counter}",
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 50,
       ),
     ));
   }

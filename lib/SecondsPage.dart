@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_state/counter.dart';
 
+import 'myText.dart';
+import 'mybutton.dart';
+
 class Secondspage extends StatelessWidget {
   const Secondspage({super.key});
 
@@ -12,9 +15,23 @@ class Secondspage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Secounds Page"),
       ),
-      body: Container(
-        child: Column(
-          children: [Text("")],
+      body: Expanded(
+        child: Center(
+          child: Container(
+            child: Column(
+              children: [
+                Mytext(),
+                SizedBox(
+                  height: 50,
+                ),
+                Mybutton(
+                    label: "decrement",
+                    onPressed: () {
+                      Provider.of<Counter>(context, listen: false).decrement();
+                    })
+              ],
+            ),
+          ),
         ),
       ),
     );

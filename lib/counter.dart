@@ -5,8 +5,17 @@ class Counter extends ChangeNotifier {
 
   int get counter => _conter;
 
-  void incresment() {
-    _conter++;
-    notifyListeners();
+  void increment() {
+    if (counter < 10) {
+      _conter++;
+      notifyListeners();
+    }
+  }
+
+  void decrement() {
+    if (counter > 0) {
+      _conter--;
+      notifyListeners();
+    }
   }
 }
